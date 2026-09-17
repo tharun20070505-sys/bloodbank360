@@ -1,0 +1,56 @@
+{
+  "short_name": "BloodBank360",
+  "name": "BloodBank 360 - Blood Availability & Dispatch System",
+  "description": "Intelligent location-based blood bank inventory, emergency SOS broadcasts, and nearby donor fallback coordination.",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#dc2626",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["medical", "health", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Find Blood Now",
+      "short_name": "Find Blood",
+      "description": "Two-stage emergency blood availability search",
+      "url": "/find-blood",
+      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Blood Bank Portal",
+      "short_name": "Blood Bank",
+      "description": "Manage blood inventory and dispatches",
+      "url": "/bank/dashboard",
+      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Emergency SOS",
+      "short_name": "SOS Alert",
+      "description": "Broadcast critical blood emergency beacon",
+      "url": "/emergency-sos",
+      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Live Map Explorer",
+      "short_name": "Live Map",
+      "description": "View nearby blood centers and inventory",
+      "url": "/map-explorer",
+      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+    }
+  ]
+}

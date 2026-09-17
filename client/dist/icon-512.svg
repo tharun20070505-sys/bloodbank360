@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="dropGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <filter id="glow512" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#dc2626" flood-opacity="0.5" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad512)" />
+  <circle cx="256" cy="256" r="188" fill="none" stroke="#ef4444" stroke-width="4" stroke-opacity="0.25" stroke-dasharray="14 10" />
+  <path d="M256 100 C256 100 138 245 138 325 C138 390 190.8 443 256 443 C321.2 443 374 390 374 325 C374 245 256 100 256 100 Z" fill="url(#dropGrad512)" filter="url(#glow512)" />
+  <path d="M242 255 H270 V285 H300 V313 H270 V343 H242 V313 H212 V285 H242 Z" fill="#ffffff" fill-opacity="0.95" />
+</svg>
