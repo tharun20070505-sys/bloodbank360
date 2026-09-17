@@ -4,6 +4,8 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
+const fs = require('fs');
 require('dotenv').config();
 
 const { connectDB } = require('./config/db');
@@ -26,7 +28,8 @@ initSocket(io);
 
 // Security & Utility Middleware
 app.use(helmet({
-  crossOriginResourcePolicy: false
+  crossOriginResourcePolicy: false,
+  contentSecurityPolicy: false
 }));
 app.use(cors());
 app.use(express.json());
@@ -64,7 +67,26 @@ app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/ai', require('./routes/aiRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
 
-// 404 for undefined routes
+// Serve static React client files from client/dist if built
+const clientDistPath = path.join(__dirname, '../client/dist');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+
+  // Client SPA Routing: Serve index.html for non-API routes
+  app.get('*', (req, res, next) => {
+    if (req.originalUrl.startsWith('/api') || req.originalUrl.startsWith('/socket.io')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+} else {
+  // If not built yet, redirect root to client dev server URL
+  app.get('/', (req, res) => {
+    res.redirect(process.env.CLIENT_URL || 'http://localhost:5173');
+  });
+}
+
+// 404 for undefined API routes
 app.use('*', (req, res) => {
   res.status(404).json({ success: false, message: `Cannot find ${req.originalUrl} on BloodConnect 360 API` });
 });

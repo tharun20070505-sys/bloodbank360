@@ -4,13 +4,13 @@
   "description": "BloodConnect 360 - Location-Based Blood Availability & Nearby Donor Coordination System with Two-Stage Fallback and AI Matching",
   "main": "server/server.js",
   "scripts": {
-    "install-all": "cd server && npm install && cd ../client && npm install",
+    "postinstall": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm install && npm run build",
     "start": "node server/server.js",
     "server": "cd server && npm start",
     "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "seed": "node server/seed.js",
-    "build": "cd client && npm run build",
     "desktop": "cd client && npm run desktop",
     "zip": "node scripts/create-zip.js"
   },
