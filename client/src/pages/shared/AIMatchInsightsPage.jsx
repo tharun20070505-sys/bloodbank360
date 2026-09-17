@@ -126,7 +126,7 @@ const AIMatchInsightsPage = () => {
 
         {/* Live Simulation Gauge Card */}
         <div className="card" style={{ padding: '2.5rem', marginBottom: '3rem', borderTop: `6px solid ${compatible ? 'var(--medical-green)' : 'var(--primary-600)'}` }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '2.5rem', alignItems: 'center' }}>
+          <div className="responsive-2col">
             {/* Score Wheel */}
             <div style={{
               background: 'linear-gradient(135deg, #0f172a, #1e293b)',

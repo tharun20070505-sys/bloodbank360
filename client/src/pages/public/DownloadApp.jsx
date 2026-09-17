@@ -334,7 +334,7 @@ const DownloadApp = () => {
           /* ================= MOBILE TAB ================= */
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             <div className="card" style={{ padding: '2.5rem', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.1)' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
+              <div className="responsive-2col">
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.25rem' }}>
                     <div style={{

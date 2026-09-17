@@ -73,7 +73,7 @@ const Home = () => {
         }} />
 
         <div className="app-container" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '3.5rem', alignItems: 'center' }}>
+          <div className="hero-grid">
             {/* Left Column: Heading & Value Proposition */}
             <div>
               <div style={{

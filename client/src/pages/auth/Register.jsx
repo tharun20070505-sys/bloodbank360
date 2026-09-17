@@ -117,7 +117,7 @@ const Register = () => {
           {/* Role Selection Tabs */}
           <div style={{ marginBottom: '1.75rem' }}>
             <label className="form-label">I am registering as a:</label>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem' }}>
+            <div className="role-selector-grid">
               <button
                 type="button"
                 onClick={() => setRole('PATIENT')}

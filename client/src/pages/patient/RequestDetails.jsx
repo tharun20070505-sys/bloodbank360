@@ -158,7 +158,7 @@ const RequestDetails = () => {
 
         {/* Multi-step Visual Progress Bar */}
         <div className="card" style={{ padding: '1.75rem', marginBottom: '2.5rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1rem', textAlign: 'center' }}>
+          <div className="tracker-steps-grid">
             <div>
               <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--medical-green)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 8px auto', fontWeight: '800' }}>✓</div>
               <div style={{ fontSize: '0.82rem', fontWeight: '700' }}>1. Request Created</div>

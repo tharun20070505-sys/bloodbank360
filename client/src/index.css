@@ -681,8 +681,50 @@ a:hover {
   margin-top: 1.5rem;
 }
 
+/* Responsive Layout Helpers */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.responsive-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.tracker-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.role-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .responsive-2col {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
   .dashboard-layout {
     grid-template-columns: 1fr;
   }
@@ -709,6 +751,12 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .app-container {
+    padding: 0 1rem;
+  }
+  .page-wrapper {
+    padding: 1.25rem 0 3.5rem 0;
+  }
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
   }
@@ -724,6 +772,35 @@ a:hover {
   }
   .sos-btn-compact {
     padding: 0.42rem 0.55rem;
+  }
+  .tracker-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    text-align: left;
+  }
+  .tracker-steps-grid > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .tracker-steps-grid > div > div:first-child {
+    margin: 0 !important;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-selector-grid {
+    grid-template-columns: 1fr;
+  }
+  .btn-lg {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .card {
+    padding: 1.25rem !important;
   }
 }
 
